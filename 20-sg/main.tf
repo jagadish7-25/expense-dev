@@ -1,5 +1,5 @@
 module "mysql_sg" {
-    source = "../../terraform-aws-sg"
+    source = "git::https://github.com/jagadish7-25/terraform-aws-sg.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "mysql"
@@ -8,7 +8,7 @@ module "mysql_sg" {
     sg_tags = var.mysql_sg_tags
 }
 module "backend_sg" {
-    source = "../../terraform-aws-security-group"
+    source = "git::https://github.com/jagadish7-25/terraform-aws-sg.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "backend"
@@ -18,7 +18,7 @@ module "backend_sg" {
 }
 
 module "frontend_sg" {
-    source = "../../terraform-aws-security-group"
+    source = "git::https://github.com/jagadish7-25/terraform-aws-sg.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "frontend"
